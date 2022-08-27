@@ -17,13 +17,13 @@ public class CallingGameRPS {
         GameRPS.choiceOfWeapon();
         String choice;
         do {
-            System.out.print("Player1 :\n");
-            GameRPS.setPlayer1(GameRPS.scanner.nextLine().toLowerCase());
+            System.out.print("computer :\n");
+            GameRPS.setcomputer(GameRPS.scanner.nextLine().toLowerCase());
 
-            System.out.print("Player2 :\n");
-            GameRPS.setPlayer2(GameRPS.scanner.nextLine().toLowerCase());
+            System.out.print("computer2 :\n");
+            GameRPS.setcomputer2(GameRPS.scanner.nextLine().toLowerCase());
 
-            GameRPS.getWhoWon(GameRPS.getPlayer1(), GameRPS.getPlayer2());
+            GameRPS.getWhoWon(GameRPS.getcomputer(), GameRPS.getcomputer2());
 
             System.out.println("Do you want play again?\n"
                    + "If you want enter \" Y \" or \" N \"");
