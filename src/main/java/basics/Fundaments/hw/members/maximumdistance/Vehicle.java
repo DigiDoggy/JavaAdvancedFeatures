@@ -1,33 +1,36 @@
 package basics.Fundaments.hw.members.maximumdistance;
 
-import java.math.BigDecimal;
-import java.math.RoundingMode;
 
 public class Vehicle {
 
-    private final float fuel;
-    private final float fuelUsage;
-    private final int passengers;
+    private float fuel;
 
-    public Vehicle(float fuel, float fuelUsage, int passengers) {
+
+
+    private float fuelUsage;
+    private int passengers;
+
+
+    public Vehicle(float fuel, float fuelUsage,int passengers){
         this.fuel = fuel;
         this.fuelUsage = fuelUsage;
         this.passengers = passengers;
     }
 
-    public BigDecimal round(float result) {
-        BigDecimal rounding = new BigDecimal(result);
-        rounding = rounding.setScale(2, RoundingMode.HALF_UP);
+
+
+    public float round(float result){
+        float rounding = (float)Math.round((result*100)/100);
         return rounding;
     }
 
-    public BigDecimal maxDistance() {
-        float p = 1;
-        if (passengers > 0) {
-            p = passengers*0.005f;
+    public float maxDistance(){
+        if(passengers>0){
+            fuelUsage+=fuelUsage*(passengers*0.05);
         }
-        return round((fuel/(fuelUsage/100))*p);
+            return round(((fuel/fuelUsage)*100));
     }
+
 
 
 }
