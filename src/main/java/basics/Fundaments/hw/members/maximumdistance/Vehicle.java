@@ -25,7 +25,11 @@ public class Vehicle {
         if(passengers>0){
             fuelUsage+=fuelUsage*(passengers*0.05);
         }
-            return round(((fuel/fuelUsage)*100));
+            return round((fuel/(fuelUsage/100)));
     }
 
+    public Vehicle(){}
+
 }
+
+

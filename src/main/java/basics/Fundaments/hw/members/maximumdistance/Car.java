@@ -17,5 +17,6 @@ public class Car extends Vehicle{
         return super.maxDistance();
     }
 
+
 }
 
