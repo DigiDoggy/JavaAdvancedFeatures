@@ -1,0 +1,17 @@
+                                        Program for painting company.
+     The program takes data from the customer.
+     *Customer's company name
+     *Soil layer
+     *Finish layer
+     *Number of metal squares
+     * Type of structures (determines the loss of paint during work)
+     *Finish color
+
+     As soon as the customer has entered his data, the program processes them.
+     * Calculates the amount of paint for painting structures.
+     *Cost of purchase of paint.
+     *Cost of work
+     *Income
+
+     Creates a file in a separate folder with the above files,
+      calculations and information about the order.

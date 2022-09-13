@@ -1,8 +1,5 @@
 package freehw.paintcalculation;
 
-import freehw.paintcalculation.data.DyeData;
-
-import javax.crypto.spec.PSource;
 import java.sql.SQLOutput;
 import java.util.Scanner;
 
@@ -16,13 +13,10 @@ public class ClientPath {
     private static float metalArea;
 
 
-    public ClientPath(String companyName, float metalArea, int gruntThickness, int finishThickness, String finishColor){
-
-    }
-
-
+//    public ClientPath(String companyName, float metalArea, int gruntThickness, int finishThickness, String finishColor){
+//
+//    }
    // Getter and Setters
-
 
     public static void setCompanyName(String companyName) {
         ClientPath.companyName = companyName;
@@ -33,15 +27,15 @@ public class ClientPath {
     }
 
     public static String getFinishColor() {
-        return "red";
+        return finishColor;
     }
 
-    public static void setFinishColor(String gruntColor) {
+    public static void setFinishColor(String finishColor) {
         ClientPath.finishColor = finishColor;
     }
 
     public static int getGruntThickness() {
-        return 50;
+        return gruntThickness;
     }
 
     public static void setGruntThickness(int gruntThickness) {
@@ -49,7 +43,7 @@ public class ClientPath {
     }
 
     public static int getFinishThickness() {
-        return 50;
+        return finishThickness;
     }
 
     public static void setFinishThickness(int finishThickness) {
@@ -57,11 +51,24 @@ public class ClientPath {
     }
 
     public static float getMetalArea() {
-        return 5000;
+        return metalArea;
     }
 
     public static void setMetalArea(float metalArea) {
         ClientPath.metalArea = metalArea;
+    }
+
+    public static void getCustomerInfo(){
+        System.out.println("\t Your profile is:");
+        System.out.println("Company name: " + companyName);
+        System.out.println("Grunt thickness is: " + gruntThickness);
+        System.out.println("Finish thickness is: " + finishThickness);
+        System.out.println("Finish color is: " + finishColor);
+        System.out.println("Metel area is: " + metalArea);
+
+        System.out.println();
+
+
     }
 
 
