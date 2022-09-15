@@ -1,19 +1,33 @@
 package freehw.paintcalculation;
 
+import freehw.paintcalculation.data.Storage;
+
+import java.io.IOException;
 import java.util.Scanner;
 
 public class Main {
     private static final Scanner scanner = new Scanner(System.in);
 
-    public static void main(String[] args) {
+    public static void main(String[] args) throws IOException {
 
-        getCompanyName();
-        getColor();
-        getFinishThicknessFromClient();
-        getGruntThicknessFromClient();
-        getMetalAreaFromClient();
+//        getCompanyName();
+//        getColor();
+//        getFinishThicknessFromClient();
+//        getGruntThicknessFromClient();
+//        getMetalAreaFromClient();
+//
+//        ClientPath.getCustomerInfo();
 
-        ClientPath.getCustomerInfo();
+//        System.out.println(AmountOfGrunt.getBucketGrunt());
+//        System.out.println(AmountOfGrunt.getLitersToStorage());
+
+        Operation.getProjectIfo();
+
+//        System.out.println(Storage.getFinishStorage().indexOf(0));
+
+//       Operation.getProjectIfo();
+
+
 
 
     }
@@ -33,7 +47,7 @@ public class Main {
     public static int getGruntThicknessFromClient() {
         System.out.println("Enter grunt thickness (40,50,60): ");
 
-        ClientPath.setGruntThickness(getInt());
+        ClientPath.setGruntThickness(Operation.getInt());
         if (ClientPath.getGruntThickness() != 40 &&
                 ClientPath.getGruntThickness() != 50 &&
                 ClientPath.getGruntThickness() != 60) {
@@ -42,7 +56,7 @@ public class Main {
                     ClientPath.getGruntThickness() != 60)
             {
                 System.out.println("Wrong input, enter grunt thickness (40,50,60):");
-                ClientPath.setGruntThickness(getInt());
+                ClientPath.setGruntThickness(Operation.getInt());
             }
         }
         return ClientPath.getGruntThickness();
@@ -50,13 +64,13 @@ public class Main {
 
     public static int getFinishThicknessFromClient() {
         System.out.println("Enter finish thickness (50,80):");
-        ClientPath.setFinishThickness(getInt());
+        ClientPath.setFinishThickness(Operation.getInt());
         if (ClientPath.getFinishThickness() != 50 &&
                 ClientPath.getFinishThickness() != 80) {
             while (ClientPath.getFinishThickness() != 50 &&
                     ClientPath.getFinishThickness() != 80) {
                 System.out.println("Wrong input, enter finish thickness (50,80): ");
-                ClientPath.setFinishThickness(getInt());
+                ClientPath.setFinishThickness(Operation.getInt());
             }
         }
 
@@ -65,39 +79,8 @@ public class Main {
 
     public static float getMetalAreaFromClient() {
         System.out.println("Enter area(m^2) of metal: ");
-        ClientPath.setMetalArea(getFloat());
+        ClientPath.setMetalArea(Operation.getFloat());
         return ClientPath.getMetalArea();
-    }
-
-    public static float getFloat() {
-        do {
-            if (scanner.hasNextFloat()) {
-                float result = scanner.nextFloat();
-                return result;
-            } else {
-                System.out.println("Enter the numbers: ");
-                scanner.nextLine();
-            }
-        } while (!scanner.hasNextFloat());
-
-        return getFloat();     // What is that Oo
-    }
-
-    public static int getInt() {
-
-
-
-        do {
-            if (scanner.hasNextInt()) {
-                int result = scanner.nextInt();
-                return result;
-            } else {
-                System.out.println("Enter the numbers: ");
-                scanner.nextLine();
-            }
-        } while (!scanner.hasNextInt());
-
-        return getInt();   // What is that Oo
     }
 
 }

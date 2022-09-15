@@ -1,6 +1,5 @@
 package freehw.paintcalculation;
 
-import java.sql.SQLOutput;
 import java.util.Scanner;
 
 public class ClientPath {
@@ -35,7 +34,7 @@ public class ClientPath {
     }
 
     public static int getGruntThickness() {
-        return gruntThickness;
+        return 50;
     }
 
     public static void setGruntThickness(int gruntThickness) {
@@ -43,7 +42,7 @@ public class ClientPath {
     }
 
     public static int getFinishThickness() {
-        return finishThickness;
+        return 50;
     }
 
     public static void setFinishThickness(int finishThickness) {
@@ -51,7 +50,7 @@ public class ClientPath {
     }
 
     public static float getMetalArea() {
-        return metalArea;
+        return 3000;
     }
 
     public static void setMetalArea(float metalArea) {
@@ -64,7 +63,7 @@ public class ClientPath {
         System.out.println("Grunt thickness is: " + gruntThickness);
         System.out.println("Finish thickness is: " + finishThickness);
         System.out.println("Finish color is: " + finishColor);
-        System.out.println("Metel area is: " + metalArea);
+        System.out.println("Metal area is: " + metalArea);
 
         System.out.println();
 
