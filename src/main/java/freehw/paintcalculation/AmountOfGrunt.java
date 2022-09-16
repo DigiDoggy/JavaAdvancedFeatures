@@ -13,7 +13,7 @@ public class AmountOfGrunt{
           if(getAmountOfDyeGrunt()<Grunt.getGruntPaintBucket()){
                return Grunt.getGruntPaintBucket();
           } else if (getAmountOfDyeGrunt()>Grunt.getGruntPaintBucket()) {
-              return (Operation.round(getAmountOfDyeGrunt())%Grunt.getGruntPaintBucket());
+              return (Operation.round(getAmountOfDyeGrunt()/Grunt.getGruntPaintBucket()))+1;
           }
           return -1;
      }
@@ -42,8 +42,8 @@ public class AmountOfGrunt{
 
      public static void getGruntInfo(){
           System.out.println("How much soil is needed to work on the project: " + getAmountOfDyeGrunt());
-          System.out.println("How many buckets of paint are required to paint a project: " + getBucketGrunt());
-          System.out.println("How much soil will go to the warehouse: " + getLitersToGruntStorage());
+          System.out.println("How many buckets of soil are required to paint a project: " + getBucketGrunt());
+          System.out.println("How many liters of soil will go to the warehouse: " + getLitersToGruntStorage());
      }
 
 }

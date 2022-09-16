@@ -30,9 +30,18 @@ public class Storage {
         System.out.println(finishStorage);
     }
 
-
-
     public static ArrayList<Float> getFinishStorage() {
         return finishStorage;
     }
+
+  /*  public static float getElementFromStorage(ArrayList<Float> arrayList){
+        float value = 0;
+        for (float num:arrayList) {
+            System.out.println(num);
+            num=value;
+        }
+        return  value;
+
+
+    }*/
 }

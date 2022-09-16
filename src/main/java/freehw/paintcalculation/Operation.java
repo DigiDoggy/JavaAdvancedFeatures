@@ -1,12 +1,10 @@
 package freehw.paintcalculation;
 
-import freehw.paintcalculation.data.Storage;
-
 import java.math.BigDecimal;
 import java.math.RoundingMode;
-import java.util.ArrayList;
 
 import static freehw.paintcalculation.ClientPath.scanner;
+import static freehw.paintcalculation.Price.getPriceInfo;
 
 public class Operation {
 
@@ -55,12 +53,24 @@ public class Operation {
         ClientPath.getCustomerInfo();
         AmountOfGrunt.getGruntInfo();
         AmountOfFinish.getFinishIfo();
-        Storage.showGruntStorage();
-        Storage.showFinishStorage();
-        Price.getPriceInfo();
+        getPriceInfo();
     }
 
-    //Get value from ArrayList
+    // Regex for search finish or grunt Storage in file
 
+/*   public static void getPaintInStorage(){
+       try(FileReader reader = new FileReader("PaintProg\\Storage\\GruntStorage.txt"))
+       {
+           char[] buf = new char[256];
+           int c;
+           while((c = reader.read(buf))>0){
+
+               if(c < 256){
+                   buf = Arrays.copyOf(buf, c);
+               }
+               System.out.print(buf);
+           }
+       }
+   }*/
 
 }

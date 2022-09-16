@@ -4,6 +4,7 @@ import java.util.Scanner;
 
 public class ClientPath {
 
+
     public static Scanner scanner = new Scanner(System.in);
     private static String companyName;
     private static String finishColor;
@@ -34,7 +35,7 @@ public class ClientPath {
     }
 
     public static int getGruntThickness() {
-        return 50;
+        return gruntThickness;
     }
 
     public static void setGruntThickness(int gruntThickness) {
@@ -42,7 +43,7 @@ public class ClientPath {
     }
 
     public static int getFinishThickness() {
-        return 50;
+        return finishThickness;
     }
 
     public static void setFinishThickness(int finishThickness) {
@@ -50,7 +51,7 @@ public class ClientPath {
     }
 
     public static float getMetalArea() {
-        return 3000;
+        return metalArea;
     }
 
     public static void setMetalArea(float metalArea) {
@@ -60,16 +61,32 @@ public class ClientPath {
     public static void getCustomerInfo(){
         System.out.println("\t Your profile is:");
         System.out.println("Company name: " + companyName);
-        System.out.println("Grunt thickness is: " + gruntThickness);
+        System.out.println("Soil thickness is: " + gruntThickness);
         System.out.println("Finish thickness is: " + finishThickness);
         System.out.println("Finish color is: " + finishColor);
         System.out.println("Metal area is: " + metalArea);
 
         System.out.println();
 
+    }
 
+    public static void clientCheckInfo() {
+    char customerAnswer;
+        do {
+        getCustomerInfo();
+        System.out.print("If you want to fix something, press \"y\", if not \"n\"." + "\n");
+        customerAnswer = scanner.next().toLowerCase().charAt(0);
+        if (customerAnswer==('y')) {
+            Main.getCompanyName();
+            Main.getColor();
+            Main.getFinishThicknessFromClient();
+            Main.getGruntThicknessFromClient();
+            Main.getMetalAreaFromClient();
+        }
+
+        } while (customerAnswer == 'y');
+     }
     }
 
 
 
-}

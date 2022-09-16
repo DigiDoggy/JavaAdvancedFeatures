@@ -1,8 +1,8 @@
 package freehw.paintcalculation;
 
 public class Price {
-    private static final float priceOfGrunt = 65;
-    private static final float pricePfFinish = 60;
+    private static final float priceOfGrunt = 60;
+    private static final float pricePfFinish = 70;
 
     //Getter
 
