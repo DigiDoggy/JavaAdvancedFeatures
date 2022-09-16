@@ -1,5 +1,5 @@
-package freehw.paintcalculation;
-
-public interface Factor {
-    float lossFactor();
-}
+//package freehw.paintcalculation;
+//
+//public interface Factor {
+//    float lossFactor();
+//}
