@@ -45,8 +45,6 @@ public class AmountOfFinish{
         System.out.println("How many buckets of finish are required to paint a project: " + getBucketFinish());
         System.out.println("How many liters of finish will go to the warehouse: " + getLitersToFinishStorage());
 
-
-
     }
 
 
