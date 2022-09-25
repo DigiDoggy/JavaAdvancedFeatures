@@ -22,7 +22,7 @@ public class ClientPath {
         ClientPath.companyName = companyName;
     }
 
-    public static String getCompanyName() {
+    public static  String getCompanyName() {
         return companyName;
     }
 
@@ -54,6 +54,23 @@ public class ClientPath {
         return metalArea;
     }
 
+    public static void clientCheckInfo() {
+        char customerAnswer;
+        do {
+            getCustomerInfo();
+            System.out.print("If you want to fix something, press \"y\", if not \"n\"." + "\n");
+            customerAnswer = scanner.next().toLowerCase().charAt(0);
+            if (customerAnswer==('y')) {
+                Main.getCompanyName();
+                Main.getColor();
+                Main.getFinishThicknessFromClient();
+                Main.getGruntThicknessFromClient();
+                Main.getMetalAreaFromClient();
+            }
+
+        } while (customerAnswer == 'y');
+    }
+
     public static void setMetalArea(float metalArea) {
         ClientPath.metalArea = metalArea;
     }
@@ -69,24 +86,7 @@ public class ClientPath {
         System.out.println();
 
     }
-
-    public static void clientCheckInfo() {
-    char customerAnswer;
-        do {
-        getCustomerInfo();
-        System.out.print("If you want to fix something, press \"y\", if not \"n\"." + "\n");
-        customerAnswer = scanner.next().toLowerCase().charAt(0);
-        if (customerAnswer==('y')) {
-            Main.getCompanyName();
-            Main.getColor();
-            Main.getFinishThicknessFromClient();
-            Main.getGruntThicknessFromClient();
-            Main.getMetalAreaFromClient();
-        }
-
-        } while (customerAnswer == 'y');
-     }
-    }
+}
 
 
 
