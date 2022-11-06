@@ -56,6 +56,8 @@ public class Task1 {
                 "year Integer NOT NULL," +
                 " PRIMARY KEY (id))";
 
+        //git test
+
        Statement statement = con.createStatement();
        statement.executeUpdate(SQL);
 
