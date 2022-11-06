@@ -17,7 +17,6 @@ public class AdapterPatternTest {
         System.out.println("v12 volts using Object Adapter: " + v12.getVolt());
         System.out.println("v120 volts using Object Adapter: " + v120.getVolt());
 
-        System.out.println(v3.equals(v12.getVolt()));
     }
 
 

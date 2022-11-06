@@ -1,0 +1,111 @@
+<html>
+<head>
+<title>GroceryList.java</title>
+<meta http-equiv="Content-Type" content="text/html; charset=utf-8">
+<style type="text/css">
+.s0 { color: #cc7832;}
+.s1 { color: #a9b7c6;}
+.s2 { color: #808080;}
+.s3 { color: #6a8759;}
+.s4 { color: #6897bb;}
+</style>
+</head>
+<body bgcolor="#2b2b2b">
+<table CELLSPACING=0 CELLPADDING=5 COLS=1 WIDTH="100%" BGCOLOR="#606060" >
+<tr><td><center>
+<font face="Arial, Helvetica" color="#000000">
+GroceryList.java</font>
+</center></td></tr></table>
+<pre><span class="s0">package </span><span class="s1">advance.tasks.grocery</span><span class="s0">;</span>
+
+<span class="s2">//TODO:</span>
+<span class="s2">// 1. addGroceryItem</span>
+<span class="s2">// 2. printGroceryList</span>
+<span class="s2">// 3.removeGroceryItem</span>
+<span class="s2">// 4.modifyGroceryItem</span>
+<span class="s2">// 5. SearchItem</span>
+
+<span class="s0">import </span><span class="s1">java.util.ArrayList</span><span class="s0">;</span>
+<span class="s0">import </span><span class="s1">java.util.regex.Matcher</span><span class="s0">;</span>
+<span class="s0">import </span><span class="s1">java.util.regex.Pattern</span><span class="s0">;</span>
+
+<span class="s0">public class </span><span class="s1">GroceryList {</span>
+
+    <span class="s2">//Field</span>
+    <span class="s0">private </span><span class="s1">ArrayList&lt;String&gt; groceryList = </span><span class="s0">new </span><span class="s1">ArrayList&lt;&gt;()</span><span class="s0">;</span>
+    <span class="s0">private </span><span class="s1">String[] shopList = </span><span class="s0">new </span><span class="s1">String[]{</span><span class="s3">&quot;milk&quot;</span><span class="s0">, </span><span class="s3">&quot;sausage&quot;</span><span class="s0">, </span><span class="s3">&quot;beef&quot;</span><span class="s0">, </span><span class="s3">&quot;muesli&quot;</span><span class="s0">, </span><span class="s3">&quot;fruits&quot;</span><span class="s0">, </span><span class="s3">&quot;sweets&quot;</span><span class="s0">, </span><span class="s3">&quot;eggs&quot;</span><span class="s0">, </span><span class="s3">&quot;vegetables&quot;</span><span class="s1">}</span><span class="s0">;</span>
+
+    <span class="s2">//Methods</span>
+
+    <span class="s0">public void </span><span class="s1">addGroceryItem(String item) {</span>
+        <span class="s1">groceryList.add(item)</span><span class="s0">;</span>
+    <span class="s1">}</span>
+
+    <span class="s0">public void </span><span class="s1">printGroceryList() {</span>
+        <span class="s1">System.out.println(</span><span class="s3">&quot;You have &quot; </span><span class="s1">+ groceryList.size() + </span><span class="s3">&quot; items in your grocery list.&quot;</span><span class="s1">)</span><span class="s0">;</span>
+
+        <span class="s0">for </span><span class="s1">(</span><span class="s0">int </span><span class="s1">i = </span><span class="s4">0</span><span class="s0">; </span><span class="s1">i &lt; groceryList.size()</span><span class="s0">; </span><span class="s1">i++) {</span>
+            <span class="s1">System.out.println((i + </span><span class="s4">1</span><span class="s1">) + </span><span class="s3">&quot;. &quot; </span><span class="s1">+ groceryList.get(i))</span><span class="s0">;</span>
+        <span class="s1">}</span>
+    <span class="s1">}</span>
+
+    <span class="s0">private int </span><span class="s1">findItem(String searchItem) {</span>
+
+        <span class="s0">return </span><span class="s1">groceryList.indexOf(searchItem)</span><span class="s0">;</span>
+    <span class="s1">}</span>
+
+    <span class="s0">public void </span><span class="s1">removeGroceryItem(String item) {</span>
+        <span class="s0">int </span><span class="s1">position = findItem(item)</span><span class="s0">;</span>
+        <span class="s0">if </span><span class="s1">(position &gt;= </span><span class="s4">0</span><span class="s1">) {</span>
+            <span class="s1">groceryList.remove(position)</span><span class="s0">;</span>
+            <span class="s1">System.out.println(item + </span><span class="s3">&quot; deleted.&quot;</span><span class="s1">)</span><span class="s0">;</span>
+        <span class="s1">} </span><span class="s0">else </span><span class="s1">{</span>
+            <span class="s1">System.out.println(item + </span><span class="s3">&quot; is not in the list&quot;</span><span class="s1">)</span><span class="s0">;</span>
+        <span class="s1">}</span>
+    <span class="s1">}</span>
+
+    <span class="s0">public void </span><span class="s1">modifyGroceryItem(</span><span class="s0">int </span><span class="s1">position</span><span class="s0">, </span><span class="s1">String newItem) {</span>
+        <span class="s0">if </span><span class="s1">(position &gt;= </span><span class="s4">0 </span><span class="s1">&amp;&amp; position &lt; groceryList.size()) {</span>
+            <span class="s1">System.out.println(</span><span class="s3">&quot;Grocery item &quot; </span><span class="s1">+ groceryList.get(position) + </span><span class="s3">&quot;was modified&quot;</span><span class="s1">)</span><span class="s0">;</span>
+            <span class="s1">groceryList.set(position</span><span class="s0">, </span><span class="s1">newItem)</span><span class="s0">;</span>
+        <span class="s1">} </span><span class="s0">else </span><span class="s1">{</span>
+            <span class="s1">System.out.println(</span><span class="s3">&quot;Item number is not valid&quot;</span><span class="s1">)</span><span class="s0">;</span>
+        <span class="s1">}</span>
+    <span class="s1">}</span>
+
+    <span class="s0">public boolean </span><span class="s1">searchItem(String searchItem) {</span>
+        <span class="s0">if </span><span class="s1">(findItem(searchItem) &gt;= </span><span class="s4">0</span><span class="s1">) {</span>
+            <span class="s0">return true;</span>
+        <span class="s1">} </span><span class="s0">else </span><span class="s1">{</span>
+            <span class="s0">return false;</span>
+        <span class="s1">}</span>
+    <span class="s1">}</span>
+
+    <span class="s0">public void </span><span class="s1">removeAll() {</span>
+        <span class="s1">groceryList.removeAll(groceryList)</span><span class="s0">;</span>
+    <span class="s1">}</span>
+
+    <span class="s0">public int </span><span class="s1">random() {</span>
+        <span class="s0">int </span><span class="s1">randomNumberFromList = </span><span class="s4">0 </span><span class="s1">+ (</span><span class="s0">int</span><span class="s1">) (Math.random()*shopList.length)</span><span class="s0">;</span>
+        <span class="s0">return </span><span class="s1">randomNumberFromList</span><span class="s0">;</span>
+
+    <span class="s1">}</span>
+
+    <span class="s0">public void </span><span class="s1">randomAddToGroceryList() {</span>
+
+        <span class="s0">int </span><span class="s1">a = </span><span class="s4">0</span><span class="s0">;</span>
+            <span class="s0">do </span><span class="s1">{</span>
+               <span class="s1">String groceryName = String.valueOf((shopList[random()]))</span><span class="s0">;</span>
+                <span class="s0">if</span><span class="s1">(!groceryList.contains(groceryName)){</span>
+                    <span class="s1">groceryList.add(groceryName)</span><span class="s0">;</span>
+                    <span class="s1">a++</span><span class="s0">;</span>
+                <span class="s1">}</span>
+            <span class="s1">}</span><span class="s0">while </span><span class="s1">(a!=</span><span class="s4">5</span><span class="s1">)</span><span class="s0">;</span>
+        <span class="s1">}</span>
+<span class="s2">//        private void checkIsNumberFirst(){</span>
+<span class="s2">//            Pattern notFirst = Pattern.compile(&quot;A-z&quot;);</span>
+<span class="s2">//            Matcher matcher =</span>
+<span class="s2">//        }</span>
+<span class="s1">}</span></pre>
+</body>
+</html>

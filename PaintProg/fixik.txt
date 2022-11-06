@@ -1,0 +1,9 @@
+Metal area300.0
+Grunt thickness: 50	||	 Amount of soil paint for work: 33.82
+Finish thickness: 50	||	 Amount of finish paint for work: 26.54
+Finish color: red
+---------------------------------------------------------------------------------------------------
+How many buckets of soil we need: 2.0	||	 Price for it: 120.0
+How many buckets of finish we need: 3.0	||	 Price for it: 210.0
+------------------------------/ to the warehouse /------------------------------
+How many soil liters we has in storage: 6.18	||	 Finish: 3.46
